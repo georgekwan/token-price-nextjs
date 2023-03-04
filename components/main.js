@@ -40,12 +40,12 @@ export default function Header() {
     await Moralis.start({
       apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
     });
-
+    // Retrieve token price
     const response = await Moralis.EvmApi.token.getTokenPrice({
       address,
       chain,
     });
-    // Retrieve current price
+    // Display token price
     setResult(`$ ${response.toJSON().usdPrice}`);
     setShowResult(true);
     setChainValue('');
