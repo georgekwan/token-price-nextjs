@@ -1,4 +1,4 @@
-# Displaying token prices with Moralis.
+# Search token prices with Moralis.
 
 This repository contains a Next.js project for displaying token prices using Moralis.
 
