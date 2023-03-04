@@ -56,10 +56,26 @@ export default function Header() {
 
   return (
     <section className={styles.main}>
-      <form className={styles.getTokenForm}>
-        <label className={styles.label}>Add ERC20 Contract Address</label>
-        <input className={styles.contractAddress} />
-        <label className={styles.label}>Select Chain</label>
+      <form
+        className={styles.getTokenForm}
+        name="create-profile-form"
+        method="POST"
+        action="#"
+      >
+        <label className={styles.label} htmlFor="contractAddress">
+          Add ERC20 Contract Address
+        </label>
+        <input
+          className={styles.contractAddress}
+          type="text"
+          id="contractAddress"
+          name="contractAddress"
+          maxLength="120"
+          required
+        />
+        <label className={styles.label} htmlFor="contractAddress">
+          Select Chain
+        </label>
         <Select
           styles={customStyles}
           options={valueOptions}
@@ -68,10 +84,12 @@ export default function Header() {
           onChange={changeHandler}
         />
       </form>
-      <button className={styles.form_btn} onClick={console.log('Submit')}>
+      <button className={styles.form_btn} onClick={handleSubmit}>
         Submit
       </button>
-      <section className={styles.result}>Result</section>
+      <section className={styles.result}>
+        {showResult && <p>{result}</p>}
+      </section>
     </section>
   );
 }
