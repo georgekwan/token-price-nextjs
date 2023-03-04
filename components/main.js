@@ -46,8 +46,10 @@ export default function Header() {
       chain,
     });
     // Display token price
+    console.log(response.toJSON());
     setResult(`$ ${response.toJSON().usdPrice}`);
     setShowResult(true);
+    // Reset input field after submit
     setChainValue('');
     document.querySelector('#contractAddress').value = '';
   };
