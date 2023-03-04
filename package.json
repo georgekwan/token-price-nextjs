@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@moralisweb3/evm-utils": "^2.14.3",
+    "moralis": "^2.14.3",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
