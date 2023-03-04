@@ -10,14 +10,16 @@ export default function Header() {
   const [chainValue, setChainValue] = useState('');
 
   return (
-    <section>
-      <form>
-        <label>Add ERC20 Contract Address</label>
-        <input />
-        <label>Select Chain</label>
+    <section className={styles.main}>
+      <form className={styles.getTokenForm}>
+        <label className={styles.label}>Add ERC20 Contract Address</label>
+        <input className={styles.contractAddress} />
+        <label className={styles.label}>Select Chain</label>
       </form>
-      <button onClick={console.log('Submit')}>Submit</button>
-      <section>Result</section>
+      <button className={styles.form_btn} onClick={console.log('Submit')}>
+        Submit
+      </button>
+      <section className={styles.result}>Result</section>
     </section>
   );
 }
