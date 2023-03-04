@@ -33,9 +33,10 @@ export default function Header() {
 
   // Submit button handler
   const handleSubmit = async () => {
+    // Get and store contract address
     address = document.querySelector('#contractAddress').value;
     const chain = EvmChain.ETHEREUM;
-
+    // Start Moralis SDK
     await Moralis.start({
       apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
     });
@@ -44,7 +45,7 @@ export default function Header() {
       address,
       chain,
     });
-
+    // Retrieve current price
     setResult(`$ ${response.toJSON().usdPrice}`);
     setShowResult(true);
     setChainValue('');
