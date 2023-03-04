@@ -14,7 +14,17 @@ export default function Header() {
   const valueOptions = [
     { value: 'eth', label: 'Ethereum' },
     { value: 'goerli', label: 'Goerli' },
+    { value: 'polygon', label: 'Polygon' },
+    { value: 'avalanche', label: 'Avalanche' },
   ];
+
+  const customStyles = {
+    option: (provided) => ({
+      ...provided,
+      color: '#000000',
+      backgroundColor: '#ffffff',
+    }),
+  };
 
   return (
     <section className={styles.main}>
