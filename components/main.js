@@ -8,6 +8,13 @@ export default function Header() {
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState('');
   const [chainValue, setChainValue] = useState('');
+  let address;
+
+  // Dropdown options
+  const valueOptions = [
+    { value: 'eth', label: 'Ethereum' },
+    { value: 'goerli', label: 'Goerli' },
+  ];
 
   return (
     <section className={styles.main}>
