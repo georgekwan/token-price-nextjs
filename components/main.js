@@ -31,6 +31,26 @@ export default function Header() {
     setChainValue(chainValue);
   };
 
+  // Submit button handler
+  const handleSubmit = async () => {
+    address = document.querySelector('#contractAddress').value;
+    const chain = EvmChain.ETHEREUM;
+
+    await Moralis.start({
+      apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
+    });
+
+    const response = await Moralis.EvmApi.token.getTokenPrice({
+      address,
+      chain,
+    });
+
+    setResult(`$ ${response.toJSON().usdPrice}`);
+    setShowResult(true);
+    setChainValue('');
+    document.querySelector('#contractAddress').value = '';
+  };
+
   return (
     <section className={styles.main}>
       <form className={styles.getTokenForm}>
